@@ -220,7 +220,7 @@ export default function App() {
         <span aria-hidden className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-800 text-lg text-white">♿</span>
         <div className="min-w-0">
           <h1 className="text-base font-bold leading-tight md:text-lg">{t("Barangay Real Access")}</h1>
-          <p className="hidden truncate text-xs text-muted md:block">{t("Accessibility map · Real, Calamba, Laguna")}</p>
+          <p className="hidden text-xs leading-snug text-muted md:block">{t("Accessibility map · Real, Calamba, Laguna")}</p>
         </div>
       </div>
       {account}
@@ -234,7 +234,7 @@ export default function App() {
         {searchBox("")}{chips}{filterFields}
       </div>
       <div className="flex items-center justify-between text-sm text-muted">
-        <span>{shown.length} {t("location(s)")}</span>
+        <span aria-live="polite">{loaded ? `${shown.length} ${t("location(s)")}` : t("Loading…")}</span>
         {filtered && <button onClick={clearFilters} className="font-medium underline">{t("Clear filters")}</button>}
       </div>
       {user && <button onClick={() => startDraft(blank())} className={btnDark}>＋ {t("Add location")}</button>}
@@ -247,7 +247,7 @@ export default function App() {
               <span className="min-w-0 flex-1"><span className="block truncate font-medium">{l.name}</span>
                 <span className="block truncate text-xs text-muted">{t(CATEGORIES[l.category])} · {t(STATUSES[l.status].label)}</span>
                 <FeatureBadges features={l.features} dim={dim} /></span>
-              <span aria-hidden className="text-xl text-slate-400">›</span>
+              <span aria-hidden className="text-xl text-muted">›</span>
             </button>
           </li>
         ))}

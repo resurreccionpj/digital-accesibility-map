@@ -39,6 +39,7 @@ const fil: Record<string, string> = {
   "All features": "Lahat ng feature",
   Filters: "Mga filter",
   Menu: "Menu",
+  "Loading…": "Naglo-load…",
   "Photo caption": "Paglalarawan ng larawan",
   "Photo of": "Larawan ng",
   General: "Pangkalahatan",
