@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T00:00:00Z",
+  "title": "Design System: Barangay Real Access",
+  "extensions": {
+    "colorMeta": {
+      "brand-teal": { "role": "primary", "displayName": "Deep Teal", "canonical": "#115e59", "tonalRamp": ["#042f2e", "#134e4a", "#115e59", "#0f766e", "#0d9488", "#5eead4", "#99f6e4", "#f0fdfa"] },
+      "status-existing": { "role": "secondary", "displayName": "Existing Green", "canonical": "#15803d", "tonalRamp": ["#052e16", "#14532d", "#166534", "#15803d", "#16a34a", "#4ade80", "#bbf7d0", "#f0fdf4"] },
+      "status-needs-improvement": { "role": "secondary", "displayName": "Needs-Work Orange", "canonical": "#c2410c", "tonalRamp": ["#431407", "#7c2d12", "#9a3412", "#c2410c", "#ea580c", "#fb923c", "#fed7aa", "#fff7ed"] },
+      "status-proposed": { "role": "secondary", "displayName": "Proposed Blue", "canonical": "#1d4ed8", "tonalRamp": ["#172554", "#1e3a8a", "#1e40af", "#1d4ed8", "#2563eb", "#60a5fa", "#bfdbfe", "#eff6ff"] },
+      "status-needs-assessment": { "role": "secondary", "displayName": "Unassessed Gray", "canonical": "#4b5563", "tonalRamp": ["#111827", "#1f2937", "#374151", "#4b5563", "#6b7280", "#9ca3af", "#d1d5db", "#f3f4f6"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0f172a", "tonalRamp": ["#020617", "#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#cbd5e1", "#f1f5f9"] }
+    },
+    "typographyMeta": {
+      "title": { "displayName": "Title", "purpose": "App name in the header." },
+      "headline": { "displayName": "Headline", "purpose": "Place name and form headings." },
+      "body": { "displayName": "Body", "purpose": "Lists, notes and fields." },
+      "label": { "displayName": "Label", "purpose": "Chips, tags and feature tiles." }
+    },
+    "shadows": [
+      { "name": "float", "value": "0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1)", "purpose": "Locate button and other controls floating over the map." },
+      { "name": "pin", "value": "0 1px 3px rgba(0,0,0,.4)", "purpose": "Feature tiles and badges on map pins." }
+    ],
+    "motion": [
+      { "name": "press", "value": "transform .15s, background-color .15s; scale(.98) on :active", "purpose": "Button press feedback. Disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main action, such as Add location or Save.",
+      "html": "<button class=\"ds-btn-primary\">Add location</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:0;border-radius:12px;background:#115e59;color:#fff;font:600 14px Geist,system-ui,sans-serif;transition:background-color .15s,transform .15s}.ds-btn-primary:hover{background:#0f766e}.ds-btn-primary:active{transform:scale(.98)}.ds-btn-primary:focus-visible{outline:3px solid #0f172a;outline-offset:2px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary actions such as Editor login or language switch.",
+      "html": "<button class=\"ds-btn-secondary\">FIL</button>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 12px;border:1px solid #cbd5e1;border-radius:12px;background:#fff;color:#0f172a;font:600 12px Geist,system-ui,sans-serif;transition:background-color .15s}.ds-btn-secondary:hover{background:#f1f5f9}.ds-btn-secondary:focus-visible{outline:3px solid #0f172a;outline-offset:2px}"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Text field with 1px line border and 12px corners.",
+      "html": "<input class=\"ds-input\" placeholder=\"Search places…\">",
+      "css": ".ds-input{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #cbd5e1;border-radius:12px;background:#fff;color:#0f172a;font:400 14px Geist,system-ui,sans-serif}.ds-input::placeholder{color:#475569}.ds-input:focus-visible{outline:3px solid #0f172a;outline-offset:2px}"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "description": "Filter chip with its status glyph disc.",
+      "html": "<button class=\"ds-chip\"><span class=\"ds-disc\">✓</span>Existing</button>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 12px 0 4px;border:1px solid #cbd5e1;border-radius:9999px;background:#fff;color:#0f172a;font:600 14px Geist,system-ui,sans-serif}.ds-disc{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;border-radius:50%;background:#15803d;color:#fff;font-size:13px}"
+    },
+    {
+      "name": "Feature Tile",
+      "kind": "custom",
+      "description": "Feature icon with status-colored border and corner shape.",
+      "html": "<span class=\"ds-tile\">♿</span>",
+      "css": ".ds-tile{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;background:#fff;border:2.5px solid #c2410c;border-radius:50% 50% 50% 8px;font-size:12px;line-height:1}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Field Guide",
+    "overview": "A map people trust outdoors, on a phone, in sun. It is plain, high-contrast and unhurried. The map is the surface; the interface is a sidebar on desktop and a search bar, chips and a bottom sheet on a phone, in the manner of Google Maps. Light and dark both follow the browser setting.",
+    "keyCharacteristics": [
+      "Slate neutrals, one teal brand accent, four reserved status colors.",
+      "44px minimum touch targets, 12px corners, soft but not playful.",
+      "Light and dark from prefers-color-scheme; map tiles are inverted in dark.",
+      "Geist throughout; small, even type steps."
+    ],
+    "rules": [
+      { "name": "The Never-Color-Alone Rule", "body": "A status always appears with its shape and glyph, on pins, chips, list rows and feature tiles.", "section": "colors" },
+      { "name": "The Reserved Colors Rule", "body": "Green, orange, blue and gray are not used for decoration, buttons or links.", "section": "colors" },
+      { "name": "The 16px Input Rule", "body": "Inputs are 16px on phones so iOS does not zoom.", "section": "typography" },
+      { "name": "The Floats-Only Rule", "body": "Only elements that sit over the map get a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do pair every status color with its shape and glyph.",
+      "Do keep touch targets at 44px or more.",
+      "Do write every string in both English and Filipino.",
+      "Do use the semantic tokens (bg-surface, text-ink, text-muted, border-line) so dark mode works.",
+      "Do label desk-assessed data as unverified until fieldwork confirms it."
+    ],
+    "donts": [
+      "Don't use status colors for decoration or links.",
+      "Don't rely on color alone to convey status or feature state.",
+      "Don't add shadows to elements that don't float over the map.",
+      "Don't hard-code slate or white utility colors where a semantic token exists.",
+      "Don't list places in a bottom panel on phones; the list is its own view."
+    ]
+  }
+}
